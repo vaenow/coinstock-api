@@ -1,4 +1,4 @@
-const response = require("../../../utils/response")
+const response = require("../../utils/response")
 const TokenModel = require("../models/token")
 const TokenExchangeRefModel = require("../models/tokenExchangeRef")
 const code = require("../code")
