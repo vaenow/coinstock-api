@@ -11,7 +11,6 @@ const { boot } = require('./sinajs');
 //   '81':'债券','82':'债券',"111":"A股"
 // };
 exports.search = async (ctx) => {
-  console.log('ctx.request.query')
   let keyword = ctx.request.query.keyword;
   // 判断是否有keyword
   if (!keyword) {
@@ -19,6 +18,6 @@ exports.search = async (ctx) => {
   }
   const ret = await boot({ query: keyword });
 
-  console.log('ret', ret)
+  console.log('ret', JSON.stringify(ret))
   return response.success(ctx, ret)
 };

@@ -35,7 +35,7 @@ function guessStockExchangeV2({ query }) {
         const { symbolType, symbol } = stockSuggest.extractData(buffer);
         const stockEx = guessStockExchange({ query: symbol });
         // const stockEx = guessStockExchangeV3({ symbolType });
-        console.log(stockEx);
+        console.log(JSON.stringify(stockEx));
         resolve({ stockEx, symbol });
       })
   })
@@ -63,7 +63,7 @@ async function boot({ query }) {
           const say = stockEx.sayTempl(data);
           const chart = stockEx.parseImg({ symbol });
           if (data.code) {
-            console.log(say, chart);
+            // console.log(say, chart);
             resolve({ /*say, */chart, query, ...data });
           } else {
             resolve({});

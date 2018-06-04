@@ -73,7 +73,7 @@ function sayTempl({ code, name, live, diff, time, times, amount }) {
 
 
 function isMatch({ query }) {
-  console.log('query1 us', query, query.match(/^[a-z]$/i));
+  console.log('query1 us', query);
 
   return query.match(/^[a-z\.]/i)
     // || query.match(/^\d{5}$/i)
