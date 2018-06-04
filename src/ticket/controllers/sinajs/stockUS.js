@@ -75,12 +75,14 @@ function sayTempl({ code, name, live, diff, time, times, amount }) {
 function isMatch({ query }) {
   console.log('query1 us', query, query.match(/^[a-z]$/i));
 
-  return query.match(/^[a-z]/i)
+  return query.match(/^[a-z\.]/i)
     // || query.match(/^\d{5}$/i)
 }
 
 function parseSymbol({ symbol }) {
   console.log('symbol', symbol)
+
+  symbol = symbol.replace(/\./g, '');
 
   if (symbol.match(/^US(.*)/)) {
     return ('gb_' + symbol.match(/^US(.*)/)[1]).toLowerCase();

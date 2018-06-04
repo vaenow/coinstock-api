@@ -17,6 +17,7 @@ function extractData(buffer) {
   const props = quoteStr.split(/,/g);
 
   return {
+    symbolType: props[1],
     symbol: props[2]
   }
 }

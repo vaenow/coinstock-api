@@ -31,6 +31,7 @@ var optionsSuggestParam = {
 };
 
 exports.fetchStockData = function (options = {}, callback) {
+  // http://hq.sinajs.cn/list=gb_inx
   console.log('options', options)
   options = {
     ...optionsFetchDefault,

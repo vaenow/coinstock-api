@@ -32,12 +32,17 @@ function guessStockExchangeV2({ query }) {
     suggestStock(
       { query },
       (buffer) => {
-        const { symbol } = stockSuggest.extractData(buffer);
+        const { symbolType, symbol } = stockSuggest.extractData(buffer);
         const stockEx = guessStockExchange({ query: symbol });
+        // const stockEx = guessStockExchangeV3({ symbolType });
         console.log(stockEx);
         resolve({ stockEx, symbol });
       })
   })
+}
+
+function guessStockExchangeV3({ symbolType }) {
+
 }
 
 async function boot({ query }) {
